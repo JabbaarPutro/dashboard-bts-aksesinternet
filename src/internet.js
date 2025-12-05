@@ -24,7 +24,7 @@
             mapInstance = map;
             
             try {
-                const response = await fetch(`api.php?type=internet`);
+                const response = await fetch(`/api/data?type=internet`);
                 if (!response.ok) throw new Error('Gagal terhubung ke server.');
                 const dataFromServer = await response.json();
 
@@ -37,7 +37,7 @@
                 document.getElementById('filters-container').innerHTML = getFilterHtml();
                 updateDashboardUI(dataFromServer.lastUpdated);
                 
-                const geoJsonResponse = await fetch('IndonesiaProvinsi.geojson');
+                const geoJsonResponse = await fetch('/IndonesiaProvinsi.geojson');
                 const geoJsonData = await geoJsonResponse.json();
                 geojsonLayer = L.geoJSON(geoJsonData, { style, onEachFeature }).addTo(mapInstance);
 

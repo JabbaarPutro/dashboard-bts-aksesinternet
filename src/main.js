@@ -19,11 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const dashboards = {
         bts: {
-            path: './bts.js',
+            path: '/src/bts.js',
             objectName: 'btsDashboard'
         },
         internet: {
-            path: './internet.js',
+            path: '/src/internet.js',
             objectName: 'internetDashboard'
         }
     };
